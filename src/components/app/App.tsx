@@ -7,6 +7,7 @@ import Navbar from "components/navbar";
 import CardList from "components/cardList";
 import AboutSection from "components/aboutSection";
 import Footer from "components/footer";
+import ToTopButton from "components/toTopButton";
 
 const App: React.FC = () => {
   const [enableFocus, setEnableFocus] = useState(false);
@@ -51,6 +52,7 @@ const App: React.FC = () => {
       <AboutSection />
       <SectionDivider $name="about" id="about" />
       <Footer />
+      <ToTopButton />
     </MainWrapper>
   );
 };
