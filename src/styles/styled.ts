@@ -1,14 +1,22 @@
 import styled, { css } from "styled-components";
 
-export interface styledProps {
+export interface StyledProps {
+  readonly $background?: string;
   readonly $colored?: string;
+  readonly $enableFocus?: boolean;
+  readonly $expanded?: boolean;
   readonly $flexDirection?: string;
+  readonly $focus?: boolean;
+  readonly $light?: boolean;
   readonly $margin?: string;
   readonly $maxWidth?: string;
+  readonly $name?: string;
+  readonly $show?: boolean;
+  readonly $variant?: string;
   readonly $width?: string;
 }
 
-export const StyledContainer = styled.div<styledProps>`
+export const StyledContainer = styled.div<StyledProps>`
   align-items: center;
   display: flex;
   height: max-content;
@@ -19,7 +27,7 @@ export const StyledContainer = styled.div<styledProps>`
   width: 100%;
 `;
 
-export const LayoutLimiter = styled.div<styledProps>`
+export const LayoutLimiter = styled.div<StyledProps>`
   ${({ $width, $flexDirection }) => {
     return css`
       flex-direction: ${$flexDirection ? $flexDirection : "row"};
@@ -38,7 +46,7 @@ export const LayoutLimiter = styled.div<styledProps>`
   }}
 `;
 
-export const StyledText = styled.p<styledProps>`
+export const StyledText = styled.p<StyledProps>`
   ${({ theme: { colors }, $colored, $margin, $maxWidth }) => {
     return css`
       color: ${$colored ? colors.primary : colors.smokedWhite};
