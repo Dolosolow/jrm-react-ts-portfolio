@@ -4,6 +4,7 @@ import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
 
 import Header from "components/header";
 import Navbar from "components/navbar";
+import CardList from "components/cardList";
 
 const App: React.FC = () => {
   const [enableFocus, setEnableFocus] = useState(false);
@@ -37,6 +38,14 @@ const App: React.FC = () => {
       <Navbar />
       <Header />
       <SectionDivider $name="projects" id="projects" />
+      <CardList
+        projects={[
+          { id: 1, name: "#fff" },
+          { id: 2, name: "#1db954" },
+          { id: 3, name: "#000" },
+          { id: 4, name: "#3937ff" },
+        ]}
+      />
     </MainWrapper>
   );
 };
