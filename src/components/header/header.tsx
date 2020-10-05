@@ -11,7 +11,7 @@ import {
   AnimtedStyledText,
 } from "./styled";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <StyledHeader>
       <video autoPlay loop muted>

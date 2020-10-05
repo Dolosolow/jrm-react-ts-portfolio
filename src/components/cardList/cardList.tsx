@@ -1,11 +1,16 @@
 import React from "react";
-import { useTrail } from "react-spring";
+import { SpringValue, useTrail } from "react-spring";
 import { StyledCLContainer, StyledCardList } from "./styled";
 
 import Card from "components/card";
 
 interface Props {
   projects: Array<{ id: number; name: string }>;
+}
+
+interface TrailProps {
+  opacity: SpringValue<number>;
+  y: SpringValue<number>;
 }
 
 const CardList: React.FC<Props> = ({ projects }) => {
@@ -15,7 +20,7 @@ const CardList: React.FC<Props> = ({ projects }) => {
     delay: 100,
     config: { duration: 700 },
   });
-  const animatedCards = animatedTrails.map((props, idx) => (
+  const animatedCards = animatedTrails.map((props: TrailProps, idx: number) => (
     <Card
       key={projects[idx].name}
       background={projects[idx].name}
