@@ -5,6 +5,8 @@ import { MainWrapper, ProgressBar, SectionDivider } from "./styled";
 import Header from "components/header";
 import Navbar from "components/navbar";
 import CardList from "components/cardList";
+import AboutSection from "components/aboutSection";
+import Footer from "components/footer";
 
 const App: React.FC = () => {
   const [enableFocus, setEnableFocus] = useState(false);
@@ -46,6 +48,9 @@ const App: React.FC = () => {
           { id: 4, name: "#3937ff" },
         ]}
       />
+      <AboutSection />
+      <SectionDivider $name="about" id="about" />
+      <Footer />
     </MainWrapper>
   );
 };
